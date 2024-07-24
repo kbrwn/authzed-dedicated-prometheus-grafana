@@ -22,7 +22,9 @@ To enable Prometheus to scrape metrics from your permission system, configure th
 
 ### Required Values
 
-##NOTE: You can find this info at `your-authzed-domain.authzed.net/system/[permission-system]/metrics/prometheus` by replacing `[permission-system]` with the name of your permission system. 
+
+Find this info at `your-authzed-domain.authzed.net/system/[permission-system]/metrics/prometheus` by replacing `[permission-system]` with the name of your permission system or by navigating to the AuthZed Dashbord -> Permission System -> Metrics -> Scrape with Prometheus 
+
 
 - **job_name**: Replace `[permission-system]` with the name of your permission system. This identifies the job in Prometheus.
   - Example: `job_name: "exported-metrics-from-my-permission-system"`
@@ -30,13 +32,13 @@ To enable Prometheus to scrape metrics from your permission system, configure th
 - **metrics_path**: Set to `/api/v1alpha/metrics`.
 
 - **basic_auth**:
-  - **username**: Replace `[permission-system]` with the permission system name used for basic authentication.
+  - **username**: Replace `[permission-system]` with the permission system namep.
     - Example: `username: "my-permission-system"`
-  - **password**: Replace `[token]` with the token for basic authentication.
+  - **password**: Replace `[token]` with the token copied from the AuthZed Dashboard.
     - Example: `password: "doGXlyJdtjZHOdCw486t"`
 
 - **static_configs**:
-  - **targets**: Replace `[authzed-dashboard-url]` with the URL of your Authzed dashboard.
+  - **targets**: Replace `[authzed-dashboard-url]` with the URL of your Authzed Dashboard.
 
     - Example: `targets: ["https://app.demo.aws.authzed.net"]`
 
