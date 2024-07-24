@@ -22,6 +22,8 @@ To enable Prometheus to scrape metrics from your permission system, configure th
 
 ### Required Values
 
+##NOTE: You can find this info at `your-authzed-domain.authzed.net/system/[permission-system]/metrics/prometheus` by replacing `[permission-system]` with the name of your permission system. 
+
 - **job_name**: Replace `[permission-system]` with the name of your permission system. This identifies the job in Prometheus.
   - Example: `job_name: "exported-metrics-from-my-permission-system"`
 
@@ -42,7 +44,7 @@ To enable Prometheus to scrape metrics from your permission system, configure th
 
 Here's an example of a filled-out configuration:
 
-    ```yaml
+    ```
     scrape_configs:
       - job_name: "exported-metrics-from-my-permission-system"
         metrics_path: /api/v1alpha/metrics
@@ -59,11 +61,15 @@ Here's an example of a filled-out configuration:
 
 4. Run `docker compose up`
 
+---
 
-### Ports:
+### Results: 
 
-Prometheus: 9090
-Grafana: 3000
+
+Prometheus running on `localhost:9090`
+Grafana running on `localhost:3000`
+
+Check `localhost:9090/targets` for status of AuthZed Dedicated target (reachable via the "Status" –> "Targets" menu option in Prometheus UI as well.) 
 
 
 
